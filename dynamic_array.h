@@ -1,15 +1,16 @@
 #include <iostream>
 using namespace std;
 
+template <class T>
 class DynamicArray {
     public:
         DynamicArray(){
             maxSize = 5;
-            arr = new int[maxSize];
+            arr = new T[maxSize];
             n = 0;
         }
 
-        void append(int x) {
+        void append(T x) {
             if (n == maxSize) {
                 resize();
             }
@@ -32,7 +33,7 @@ class DynamicArray {
             return n;
         }
 
-        int search(int x) {
+        int search(T x) {
             for (int j=0; j<n; j++) {
                 if (arr[j] == x) {
                     return j;
@@ -42,7 +43,7 @@ class DynamicArray {
             return -1;
         }
 
-        void insert(int i, int x) {
+        void insert(int i, T x) {
             if (n == maxSize) {
                 resize();
             }
@@ -68,14 +69,14 @@ class DynamicArray {
         };
 
     private:
-        int *arr;
+        T *arr;
         int n;
         int maxSize;
 
         void resize() {
             int newSize = 2 * maxSize;
-            int *oldArr = arr;
-            arr = new int[newSize];
+            T *oldArr = arr;
+            arr = new T[newSize];
             for (int i=0; i<maxSize; i++) {
                 arr[i] = oldArr[i];
             }
