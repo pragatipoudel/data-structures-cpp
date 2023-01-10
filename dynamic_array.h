@@ -24,7 +24,7 @@ class DynamicArray {
             }
         }
 
-        int& operator[](int i) {
+        T& operator[](int i) {
             return arr[i];
             
         }
