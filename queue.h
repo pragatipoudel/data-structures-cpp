@@ -48,6 +48,13 @@ class Queue {
         }
 
         ~Queue() {
+            Node<T> *p;
+            while(head) {
+                p = head;
+                head = head->link;
+                delete p;
+            }
+            count = 0;
 
         }
     
