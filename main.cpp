@@ -1,22 +1,20 @@
 #include <iostream>
 #include <string>
-#include "stack.h"
+#include "queue.h"
 using namespace std;
 
 int main () {
-    Stack<int> stack;
+    Queue<int> queue;
 
     for (int i = 0; i<5; i++) {
-        stack.push(i*2);
+        queue.push(i*2);
     }
 
-    // cout << stack.pop() << endl;
-    // cout << stack.pop() << endl;
-    // cout << "--------------------" << endl;
+    cout << queue.pop() << endl;
+    cout << queue.pop() << endl;
+    cout << "--------------------" << endl;
 
-    stack.displayReverse();
-    cout << "------------------" << endl;
-    stack.displayForward();
+    queue.display();
 
     return 0;
 }
