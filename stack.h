@@ -44,7 +44,13 @@ class Stack {
         }
 
         ~Stack() {
-
+            Node<T> *p;
+            while (top) {
+                p = top;
+                top = top->link;
+                delete p;
+            }
+            count = 0;
         }
 
     private:
